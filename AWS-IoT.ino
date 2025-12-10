@@ -104,7 +104,6 @@ void accesDenegado(){
 
 void PublicaTag(String tagID){
   //un cop tenim el tag en un string el podem publicar a AWS
-  // el topic pot ser quelcom com "iticbcn/node01/pub"
   if (client.connected()) {
     String payload = "{\"tagID\":\"" + tagID + "\"}";
     client.publish(AWS_IOT_PUBLISH_TOPIC, payload);
@@ -117,7 +116,6 @@ void PublicaTag(String tagID){
 }
 void PublicaError(String Error){
   //un cop tenim el tag en un string el podem publicar a AWS
-  // el topic pot ser quelcom com "iticbcn/node01/pub"
   if (client.connected()) {
     String payload = "{\"Error\":\"" + Error + "\"}";
     client.publish(AWS_IOT_PUBLISH_TOPIC, payload);
