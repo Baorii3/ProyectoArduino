@@ -1,8 +1,6 @@
 #include <WiFi.h>
 extern MFRC522 rfid; 
 
-#define LED_VERDE 16
-#define LED_ROJO 17
 extern bool WifiConnected;
 
 const char* ssid = "iPhone 16";
@@ -13,14 +11,6 @@ void SetupWifi() {
   Serial.begin(115200);
   SPI.begin();
   rfid.PCD_Init();
-
-
-  // Pines LEDs
-  pinMode(LED_VERDE, OUTPUT);
-  pinMode(LED_ROJO, OUTPUT);
-  digitalWrite(LED_VERDE, LOW);
-  digitalWrite(LED_ROJO, LOW);
-
 
   // Conexión Wi-Fi
   Serial.print("Conectando a WiFi...");

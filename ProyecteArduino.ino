@@ -12,8 +12,6 @@ LiquidCrystal lcd(RS, EN, d4, d5, d6, d7);
 MFRC522 rfid(SS_PIN, RST_PIN);
 
 String RFIDTag="";
-int ledPinGreen = 15;
-int ledPinRed = 16;
 
 String payload = "";
 
@@ -30,7 +28,6 @@ void setup() {
 void loop() {
   lcd.clear();
   lcd.print("Pasi la targeta");
-  // put your main code here, to run repeatedly:
   CheckWifi();
   if (WifiConnected) {
     //Si estem conectats a wifi, connectem a AWS.
